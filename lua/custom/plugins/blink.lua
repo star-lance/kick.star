@@ -1,3 +1,4 @@
+-- Fast and modern autocompletion plugin with fuzzy matching
 return {
   {
     'saghen/blink.cmp',

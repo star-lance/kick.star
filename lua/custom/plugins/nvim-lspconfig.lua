@@ -1,3 +1,4 @@
+-- Language Server Protocol configurations for various languages
 return {
   {
     'neovim/nvim-lspconfig',

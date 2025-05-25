@@ -1,3 +1,4 @@
+-- Code formatting plugin with support for multiple formatters
 return {
   {
     'stevearc/conform.nvim',

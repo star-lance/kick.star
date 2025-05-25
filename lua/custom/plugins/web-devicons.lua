@@ -1,3 +1,4 @@
+-- File type icons for various file extensions
 return{
   {
   "nvim-tree/nvim-web-devicons",

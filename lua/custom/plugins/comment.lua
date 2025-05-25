@@ -1,3 +1,4 @@
+-- Smart commenting plugin with motion and visual mode support
 return {
   {
     'numToStr/Comment.nvim',

@@ -1,3 +1,4 @@
+-- Tokyo Night colorscheme with multiple variants
 return {
   {
     -- You can easily change to a different colorscheme.

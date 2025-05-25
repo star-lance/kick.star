@@ -1,3 +1,4 @@
+-- Git integration with signs, hunks, and blame functionality
 return {
   {
     'lewis6991/gitsigns.nvim',

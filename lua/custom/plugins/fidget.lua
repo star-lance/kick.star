@@ -1,3 +1,4 @@
+-- LSP progress indicator with customizable spinner animations
 return {
   {
     'j-hui/fidget.nvim',

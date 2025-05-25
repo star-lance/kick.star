@@ -1,3 +1,4 @@
+-- Terminal management with floating and split terminal support
 return {
   {
     'akinsho/toggleterm.nvim',

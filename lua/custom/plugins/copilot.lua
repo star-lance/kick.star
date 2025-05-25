@@ -1,3 +1,4 @@
+-- GitHub Copilot AI code completion integration
 return {
   {
     'zbirenbaum/copilot.lua',

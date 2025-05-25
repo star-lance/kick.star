@@ -1,3 +1,4 @@
+-- Bridge between Mason and LSP config for automatic server setup
 return {
   {
     'williamboman/mason-lspconfig.nvim',

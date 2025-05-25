@@ -1,3 +1,4 @@
+-- Highlights other instances of word under cursor
 return {
   {
     'RRethy/vim-illuminate',

@@ -1,3 +1,4 @@
+-- Collection of minimal Neovim plugins (using surround module)
 return {
   {
     'echasnovski/mini.nvim',

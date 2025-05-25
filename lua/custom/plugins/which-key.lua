@@ -1,3 +1,4 @@
+-- Displays available keybindings in popup window
 return {
   {
     'folke/which-key.nvim',

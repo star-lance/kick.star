@@ -1,3 +1,4 @@
+-- Diagnostics and quickfix list with enhanced UI
 return {
   {
     'folke/trouble.nvim',

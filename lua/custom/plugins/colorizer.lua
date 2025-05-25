@@ -1,3 +1,4 @@
+-- Highlights color codes and color names in various formats
 return {
   {
     'norcalli/nvim-colorizer.lua',

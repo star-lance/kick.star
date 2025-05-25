@@ -1,3 +1,4 @@
+-- Auto-closes brackets, quotes, and other pairs intelligently
 return {
   {
     'windwp/nvim-autopairs',

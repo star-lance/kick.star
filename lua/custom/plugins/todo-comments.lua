@@ -1,3 +1,4 @@
+-- Highlights and manages TODO, FIXME, and other comment keywords
 return {
   {
     'folke/todo-comments.nvim',

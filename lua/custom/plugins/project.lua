@@ -1,3 +1,4 @@
+-- Project management with automatic directory switching
 return {
   {
     'ahmedkhalf/project.nvim',

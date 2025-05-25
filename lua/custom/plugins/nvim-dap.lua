@@ -1,3 +1,4 @@
+-- Debug Adapter Protocol client for debugging support
 return {
   {
     'mfussenegger/nvim-dap',
@@ -25,19 +26,28 @@ return {
       -- Telescope DAP extensions
       require('telescope').load_extension 'dap'
 
-      -- Configure language adapters
-      -- For TypeScript (MODIFIED: fixed debugger_path)
-      require('dap-vscode-js').setup {
-        adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' },
-        node_path = "node",
-        debugger_path = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter", -- Fixed path
-        debugger_cmd = { "js-debug-adapter" },
-        log_file_path = vim.fn.stdpath("cache") .. "/dap_vscode_js.log",
-        log_file_level = vim.log.levels.ERROR,
-        log_console_level = vim.log.levels.ERROR,
+      -- Configure DAP adapters directly (bypassing dap-vscode-js for now)
+      dap.adapters['pwa-node'] = {
+        type = 'server',
+        host = 'localhost',
+        port = '${port}',
+        executable = {
+          command = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug-adapter",
+          args = { '${port}' },
+        }
       }
 
-      -- ADDED: Language configurations for React/TypeScript
+      dap.adapters['pwa-chrome'] = {
+        type = 'server',
+        host = 'localhost', 
+        port = '${port}',
+        executable = {
+          command = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug-adapter",
+          args = { '${port}' },
+        }
+      }
+
+      -- Language configurations for React/TypeScript
       for _, language in ipairs({ 'typescript', 'javascript', 'typescriptreact', 'javascriptreact' }) do
         dap.configurations[language] = {
           -- Debug Vite dev server
@@ -47,17 +57,30 @@ return {
             name = 'Debug Vite App',
             url = 'http://localhost:5173',
             webRoot = '${workspaceFolder}',
+            protocol = 'inspector',
             sourceMaps = true,
+            userDataDir = false,
             skipFiles = { '<node_internals>/**' },
           },
           -- Debug current file in Node
           {
             type = 'pwa-node',
-            request = 'launch',
+            request = 'launch', 
             name = 'Debug Current File (Node)',
             program = '${file}',
             cwd = '${workspaceFolder}',
+            protocol = 'inspector',
             sourceMaps = true,
+            skipFiles = { '<node_internals>/**' },
+          },
+          -- Attach to running Node process
+          {
+            type = 'pwa-node',
+            request = 'attach',
+            name = 'Attach to Node Process',
+            processId = require'dap.utils'.pick_process,
+            cwd = '${workspaceFolder}',
+            protocol = 'inspector',
             skipFiles = { '<node_internals>/**' },
           },
         }

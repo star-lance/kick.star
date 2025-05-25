@@ -1,3 +1,4 @@
+-- Customizable statusline plugin with multiple themes
 return {
   {
     'nvim-lualine/lualine.nvim',

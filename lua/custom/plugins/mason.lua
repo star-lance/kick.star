@@ -1,3 +1,4 @@
+-- Package manager for LSP servers, formatters, and linters
 return {
   {
     'williamboman/mason.nvim',

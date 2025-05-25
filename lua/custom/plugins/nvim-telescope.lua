@@ -1,3 +1,4 @@
+-- Fuzzy finder and picker for files, buffers, and more
 return {
   {
     'nvim-telescope/telescope.nvim',

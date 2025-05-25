@@ -1,3 +1,4 @@
+-- Modern file explorer with git status and diagnostics
 return {
   {
     'nvim-neo-tree/neo-tree.nvim',

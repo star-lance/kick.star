@@ -1,3 +1,4 @@
+-- Adds indent guides and scope highlighting
 return {
   {
     'lukas-reineke/indent-blankline.nvim',

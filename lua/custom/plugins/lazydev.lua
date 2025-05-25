@@ -1,3 +1,4 @@
+-- Lua development support for Neovim configuration
 return {
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
