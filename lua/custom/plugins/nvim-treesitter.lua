@@ -1,4 +1,3 @@
--- Syntax highlighting and parsing using Tree-sitter
 return {
   {
     'nvim-treesitter/nvim-treesitter',
@@ -9,9 +8,12 @@ return {
     },
     config = function()
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'typescript', 'tsx', 'javascript', 'c', 'cpp', 'kotlin', 'lua', 'vim', 'vimdoc', 'query', 'css', 'scss', 'html' },
+        ensure_installed = {
+          'typescript', 'tsx', 'javascript', 'c', 'cpp', 'kotlin', 'lua', 'vim', 'vimdoc', 'query', 'css', 'scss', 'html',
+          'hcl', 'terraform'
+        },
         sync_install = false,
-        auto_install = false,
+        auto_install = true,
         highlight = {
           enable = true,
           additional_vim_regex_highlighting = false,
