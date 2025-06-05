@@ -43,9 +43,11 @@ return {
 
               return nil
             end,
+            -- No hardcoded style preferences - let projects decide
             args = { "--stdin-filepath", "$FILENAME" },
             range_args = function(ctx)
-              return { "--stdin-filepath", "$FILENAME", "--range-start", ctx.range.start, "--range-end", ctx.range["end"] }
+              return { "--stdin-filepath", "$FILENAME", "--range-start", ctx.range.start, "--range-end", ctx.range
+                  ["end"] }
             end,
           },
         },
@@ -59,7 +61,8 @@ return {
 
         if not conform.can_format_buffer(bufnr) then
           local filetype = vim.bo.filetype
-          vim.notify("No conform formatter available for filetype: " .. filetype .. ". Trying LSP formatter...", vim.log.levels.WARN)
+          vim.notify("No conform formatter available for filetype: " .. filetype .. ". Trying LSP formatter...",
+            vim.log.levels.WARN)
 
           if vim.lsp.buf.format then
             vim.lsp.buf.format({
